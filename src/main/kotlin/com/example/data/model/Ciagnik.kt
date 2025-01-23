@@ -63,7 +63,7 @@ data class Ciagnik(
     val dataGwarancji: LocalDate,
     val rodzajSilnika: String,
     val rodzajPaliwa: String,
-    val rocznyLimitKm: Int,
+    val rocznyLimitKm: Int,//
     val dataPierwszejRejestracji: LocalDate,
     val nrKartyPaliwowej: Int
 )

@@ -50,11 +50,10 @@ class ZmianaStatusuDAOimp: ZmianaStatusuDAO {
             .map { it.toZmaianyStatusu() }
     }
 
-    override suspend fun getZmianaStatusuByTrasa(id: Int): ZmianyStatusu? = query {
+    override suspend fun getZmianaStatusuByTrasa(id: Int): List<ZmianyStatusu> = query {
         ZmianyStatusuTable
             .selectAll().where(ZmianyStatusuTable.idTrasy eq id)
             .map { it.toZmaianyStatusu() }
-            .singleOrNull()
     }
 
     override suspend fun getZmianaStatusuByKoszt(koszt: BigDecimal, widelki: BigDecimal): List<ZmianyStatusu> = query {

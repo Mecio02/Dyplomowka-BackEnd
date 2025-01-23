@@ -7,7 +7,7 @@ import java.math.BigDecimal
 interface ZmianaStatusuDAO {
     suspend fun getAllZmianyStatusu(): List<ZmianyStatusu>
     suspend fun getZmianaStatusuByID(id: Int): ZmianyStatusu?
-    suspend fun getZmianaStatusuByTrasa(id: Int): ZmianyStatusu?
+    suspend fun getZmianaStatusuByTrasa(id: Int): List<ZmianyStatusu>
     suspend fun getZmianaStatusuByStatus(status: Int): List<ZmianyStatusu>
     suspend fun getZmianaStatusuByData(data: LocalDateTime): List<ZmianyStatusu>
     suspend fun getZmianaStatusuByKoszt(koszt: BigDecimal, widelki: BigDecimal): List<ZmianyStatusu>

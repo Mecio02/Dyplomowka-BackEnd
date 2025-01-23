@@ -34,7 +34,7 @@ fun Route.zmianaStatusu(zmianaStatusuDAO: ZmianaStatusuDAOimp){
                 return@get
             }
             val status = zmianaStatusuDAO.getZmianaStatusuByTrasa(id)
-            if (status == null) {
+            if (status.isEmpty()) {
                 call.respond(HttpStatusCode.NotFound, "Nie znaleziono podanej zmiany statusu")
                 return@get
             }
@@ -48,7 +48,7 @@ fun Route.zmianaStatusu(zmianaStatusuDAO: ZmianaStatusuDAOimp){
                 return@get
             }
             val zmStatusu = zmianaStatusuDAO.getZmianaStatusuByTrasa(status)
-            if (zmStatusu == null) {
+            if (zmStatusu.isEmpty()) {
                 call.respond(HttpStatusCode.NotFound, "Nie znaleziono podanej zmiany statusu")
                 return@get
             }
